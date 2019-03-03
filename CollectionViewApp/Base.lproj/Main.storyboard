@@ -1,24 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Food View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FoodViewController" customModule="CollectionViewApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7t-U1-0Af">
+                                <rect key="frame" x="30" y="50" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="G5j-Cf-rAp"/>
+                                    <constraint firstAttribute="width" secondItem="o7t-U1-0Af" secondAttribute="height" multiplier="1:1" id="p1s-CF-fuj"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="more"/>
+                                <connections>
+                                    <action selector="menuButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eea-kd-uWN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMq-aY-Hwr">
+                                <rect key="frame" x="266" y="50" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="PW5-6g-GsM"/>
+                                    <constraint firstAttribute="width" secondItem="gMq-aY-Hwr" secondAttribute="height" multiplier="1:1" id="tbX-uZ-rmC"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="basket"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sushi Food" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="969-dZ-VnF">
+                                <rect key="frame" x="30" y="89" width="260" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD7-W3-mt2">
+                                <rect key="frame" x="30" y="147" width="260" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HD7-W3-mt2" firstAttribute="leading" secondItem="969-dZ-VnF" secondAttribute="leading" id="55E-Ys-JFh"/>
+                            <constraint firstItem="gMq-aY-Hwr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="o7t-U1-0Af" secondAttribute="trailing" constant="8" id="5Qc-iP-KBf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gMq-aY-Hwr" secondAttribute="trailing" constant="30" id="EA9-dB-Ten"/>
+                            <constraint firstItem="969-dZ-VnF" firstAttribute="trailing" secondItem="gMq-aY-Hwr" secondAttribute="trailing" id="ZSF-aR-Js4"/>
+                            <constraint firstItem="969-dZ-VnF" firstAttribute="leading" secondItem="o7t-U1-0Af" secondAttribute="leading" id="bjK-ow-fTo"/>
+                            <constraint firstItem="o7t-U1-0Af" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="cnh-fG-60x"/>
+                            <constraint firstItem="969-dZ-VnF" firstAttribute="top" secondItem="o7t-U1-0Af" secondAttribute="bottom" constant="15" id="fmq-bz-DhK"/>
+                            <constraint firstItem="o7t-U1-0Af" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="jQc-lt-2Uu"/>
+                            <constraint firstItem="HD7-W3-mt2" firstAttribute="top" secondItem="969-dZ-VnF" secondAttribute="bottom" constant="10" id="sIx-EK-Nlj"/>
+                            <constraint firstItem="HD7-W3-mt2" firstAttribute="trailing" secondItem="969-dZ-VnF" secondAttribute="trailing" id="sf6-a7-6UO"/>
+                            <constraint firstItem="gMq-aY-Hwr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="zIV-F0-9zR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="deliveryLabel" destination="HD7-W3-mt2" id="En1-1N-5XY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="basket" width="96" height="96"/>
+        <image name="more" width="96" height="96"/>
+    </resources>
 </document>
